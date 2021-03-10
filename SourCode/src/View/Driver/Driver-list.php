@@ -1,6 +1,6 @@
-<table class="table-list">
+<table class="table table-striped table-hover">
     <tr>
-        <button><a href="index.php?page=Driver-add">Add</a></button>
+        <button class="btn btn-secondary btn-lg"><a href="index.php?page=Driver-add">ADD</a></button>
         <th>STT</th>
         <th>F_name</th>
         <th>L_name</th>

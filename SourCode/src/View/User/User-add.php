@@ -1,6 +1,6 @@
 <div class="row g-3">
     <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Driver address</h4>
+        <h4 class="mb-3">User address</h4>
         <form class="needs-validation" novalidate="" method="post">
             <div class="row g-3">
                 <div class="col-sm-6">
@@ -19,26 +19,12 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <label for="Conatct_no" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="address" placeholder="Input a Number......" name="Conatct_no" required="">
+                    <label for="Contat_no" class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" id="address" placeholder="Input a Number......" name="Contat_no" required="">
                     <div class="invalid-feedback">
                         Please enter your shipping address.
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <label for="Rating" class="form-label">Rating</label>
-                    <select class="form-select" id="country" name="Rating" required="">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid country.
-                    </div>
-                </div>
-
                 <div class="col-md-4">
                     <label for="Gender" class="form-label">Gender</label>
                     <select class="form-select" id="state" name="Gender" required="">
@@ -57,9 +43,20 @@
                         Zip code required.
                     </div>
                 </div>
+                <div class="col-md-5">
+                    <label for="Taxi_id" class="form-label">Taxi</label>
+                    <select class="form-select" id="state" name="Taxi_id" required="">
+                        <?php foreach ($ids as $key => $id): ?>
+                            <option value="<?php echo $id['Taxi_id'] ?>"><?php echo $id['Taxi_id'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please provide a valid state.
+                    </div>
+                </div>
                 <div class="col-12">
-                    <label for="Experience" class="form-label">Experience</label>
-                    <input type="text" class="form-control" id="address" placeholder="" name="Experience" required="">
+                    <label for="Address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="" name="Address" required="">
                     <div class="invalid-feedback">
                         Please enter your shipping address.
                     </div>

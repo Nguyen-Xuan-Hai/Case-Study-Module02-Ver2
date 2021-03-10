@@ -1,8 +1,7 @@
-<table class="table-list">
+<table class="table table-striped table-hover">
     <tr>
-        <button><a href="index.php?page=Taxi-add">Add</a></button>
+        <button class="btn btn-secondary btn-lg"><a href="index.php?page=Taxi-add" >ADD</a></button>
         <th>STT</th>
-        <th>Taxi_id</th>
         <th>License_plates</th>
         <th>Model</th>
         <th>Year</th>
@@ -17,7 +16,6 @@
     <?php foreach ($taxis as $key => $taxi): ?>
         <tr>
             <td><?php echo ++$key ?></td>
-            <td><?php echo $taxi['Taxi_id'] ?></td>
             <td><?php echo $taxi['License_plates'] ?></td>
             <td><?php echo $taxi['Model'] ?></td>
             <td><?php echo $taxi['Year'] ?></td>

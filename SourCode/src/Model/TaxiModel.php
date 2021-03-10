@@ -49,22 +49,23 @@ class TaxiModel
 
     }
 
-    public function deleteTaxi($Driver_id){
+    public function deleteTaxi($Taxi_id){
 
-        $sql = "DELETE FROM TAXI WHERE Driver_id = :Driver_id";
+        $sql = "DELETE FROM TAXI WHERE Taxi_id = :Taxi_id";
         $statement = $this->database->prepare($sql);
-        $statement->bindParam(":Driver_id", $Driver_id);
+        $statement->bindParam(":Taxi_id", $Taxi_id);
         $statement->execute();
         return $statement->fetchAll();
     }
 
 
-    public function editTaxi($License_plates,$Model,$Year,$Type,$Color,$Status,$Driver_id)
+    public function editTaxi($Taxi_id,$License_plates,$Model,$Year,$Type,$Color,$Status,$Driver_id,$Image)
     {
-//        var_dump($License_plates);
-        $sql = "UPDATE TAXI SET License_plates=:License_plates,Model=:Model,Year=:Year,Type=:Type,Color=:Color,Status=:Status,Driver_id=:Driver_id";
+//        var_dump($Taxi_id,$License_plates,$Model,$Year,$Type,$Color,$Status,$Driver_id,$Image);
+        $sql = "UPDATE TAXI SET License_plates=:License_plates,Model=:Model,Year=:Year,Type=:Type,Color=:Color,Status=:Status,Driver_id=:Driver_id,Image=:Image WHERE Taxi_id=:Taxi_id";
 
         $stmt = $this->database->prepare($sql);
+        $stmt->bindValue("Taxi_id",$Taxi_id);
         $stmt->bindParam(":License_plates", $License_plates);
         $stmt->bindParam(":Model", $Model);
         $stmt->bindParam(":Year", $Year);
@@ -72,8 +73,23 @@ class TaxiModel
         $stmt->bindParam(":Color", $Color);
         $stmt->bindParam(":Status", $Status);
         $stmt->bindValue(":Driver_id", $Driver_id);
+        $stmt->bindValue(":Image", $Image);
+//        var_dump($License_plates);
         $stmt->execute();
+//        var_dump($stmt->execute());
 //        var_dump($stmt->execute());die();
+//        return $stmt->fetchAll();
+//        var_dump($stmt->fetchAll());die();
+        return $stmt->fetchAll();
+    }
+
+    public function findById($Taxi_id)
+    {
+//        var_dump(123123);die();
+        $sql = "SELECT * FROM TAXI WHERE Taxi_id =:Taxi_id";
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":Taxi_id", $Taxi_id);
+        $stmt->execute();
         return $stmt->fetchAll();
     }
 
