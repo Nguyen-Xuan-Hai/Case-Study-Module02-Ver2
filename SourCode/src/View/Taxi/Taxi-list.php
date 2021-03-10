@@ -23,9 +23,9 @@
             <td><?php echo $taxi['Color'] ?></td>
             <td><?php echo $taxi['Status'] ?></td>
             <td><?php echo $taxi['Driver_id'] ?></td>
-            <td><img src="Image/<?php echo $taxi['Image'] ?>" style="width: 80px"></td>
-            <td><a href="index.php?page=Taxi-delete&id=<?php echo $taxi['Taxi_id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</td>
-            <td><a href="index.php?page=Taxi-update&id=<?php echo $taxi['Taxi_id'] ?>">Update</td>
+            <td><img src="Image/<?php echo $taxi['Image'] ?>" style="width: 40px"></td>
+            <td><a href="index.php?page=Taxi-delete&id=<?php echo $taxi['Taxi_id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete|<a href="index.php?page=Taxi-update&id=<?php echo $taxi['Taxi_id'] ?>">Update</td>
+<!--            <td><a href="index.php?page=Taxi-update&id=--><?php //echo $taxi['Taxi_id'] ?><!--">Update</td>-->
         </tr>
     <?php endforeach; ?>
 

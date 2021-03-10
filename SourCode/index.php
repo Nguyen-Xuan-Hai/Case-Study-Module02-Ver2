@@ -4,12 +4,13 @@ ob_start();
 use App\Controller\TaxiController;
 use App\Controller\DriverController;
 use App\Controller\UserController;
-
+use App\Controller\TripController;
 require __DIR__ . '/vendor/autoload.php';
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : '';
 $taxiController = new TaxiController();
 $driverController = new DriverController();
-$userController = new UserController;
+$userController = new UserController();
+$tripController = new TripController();
 ?>
 
 <html lang="en">
@@ -54,6 +55,9 @@ $userController = new UserController;
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php?page=User-list">Danh sach User</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php?page=Trip-list">Danh sach Trip</a>
+                        </li>
                     </ul>
 <!--                    <form class="d-flex" action="index.php" method="post">-->
 <!--                        <input class="form-control me-2" type="search" placeholder="ten sach hoac ten tac gia" aria-label="Search" name="search_name">-->
@@ -67,7 +71,7 @@ $userController = new UserController;
 <!--<a href="index.php?page=Driver-list">Danh sach Driver</a>-->
 <!--<a href="index.php?page=Taxi-list">Danh sach Taxi</a>-->
 <!--<a href="index.php?page=User-list">Danh sach User</a>-->
-
+<!--    <a  href="index.php?page=Trip-list">Danh sach Trip</a>-->
 <?php
 switch ($page) {
     //Driver
@@ -108,7 +112,18 @@ switch ($page) {
         break;
     case 'User-update':
         $userController->edit();
-
+    //Trip
+    case 'Trip-list':
+        $tripController->index();
+        break;
+    case 'Trip-add':
+        $tripController->create();
+        break;
+    case 'Trip-delete':
+        $tripController->delete();
+        break;
+//    case 'User-update':
+//        $userController->edit();
 }
 ob_end_flush();
 ?>
