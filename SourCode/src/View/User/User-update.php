@@ -33,9 +33,7 @@
                         <option>Male</option>
                         <option>FeMale</option>
                     </select>
-                    <div class="invalid-feedback">
-                        Please provide a valid state.
-                    </div>
+
                 </div>
 
                 <div class="col-md-3">

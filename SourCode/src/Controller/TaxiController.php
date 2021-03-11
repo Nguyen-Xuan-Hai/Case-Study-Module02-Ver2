@@ -15,9 +15,17 @@ class TaxiController
 
     public function index()
     {
-        // Lấy tất hoá đơn từ DB ra.
-        $taxis = $this->taxiModel->getAll();
-        include "src/View/Taxi/Taxi-list.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            // Lấy tất hoá đơn từ DB ra.
+            $taxis = $this->taxiModel->getAll();
+            include "src/View/Taxi/Taxi-list.php";
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $search = $_POST['search'];
+            $taxis = $this->taxiModel->searchTaxi($search);
+//            var_dump($taxis);die();
+
+            include "src/View/Taxi/Taxi-list.php";
+        }
     }
 
     public function create()

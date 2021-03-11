@@ -1,7 +1,11 @@
 <table class="table table-striped table-hover" style="text-align: center">
     <div style="display: flex">
-        <div><button class="btn btn-secondary btn-lg" ><a href="index.php?page=User-add">ADD</a></button></div>
-        <div style="margin-left: 920px"><button class="btn btn-secondary btn-lg" ><a href="index.php?page=Trip-add">CreatTrip</a></button></div>
+        <div>
+            <button class="btn btn-secondary btn-lg"><a href="index.php?page=User-add">ADD</a></button>
+        </div>
+        <div style="margin-left: 920px">
+            <button class="btn btn-secondary btn-lg"><a href="index.php?page=Trip-add">CreatTrip</a></button>
+        </div>
 
     </div>
     <tr>
@@ -27,9 +31,11 @@
             <td class="col-1"><?php echo $user['Age'] ?></td>
             <td class="col-1"><?php echo $user['Address'] ?></td>
             <td class="col-1"><?php echo $user['Taxi_id'] ?></td>
-            <td class="col-2"><a style="margin: 0 5px" class="btn btn-danger btn-sm" href="index.php?page=User-delete&id=<?php echo $user['Usr_id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete
-                    <a style="margin: 0 5px" class="btn btn-warning btn-sm" href="index.php?page=User-update&id=<?php echo $user['Usr_id'] ?>">Update</td>
-<!--            <td><a href="index.php?page=User-update&id=--><?php //echo $user['Usr_id'] ?><!--">Update</td>-->
+            <td class="col-2"><a style="margin: 0 5px" class="btn btn-danger btn-sm"
+                                 href="index.php?page=User-delete&id=<?php echo $user['Usr_id'] ?>"
+                                 onclick="return confirm('Are you sure you want to delete this item?');">Delete
+                    <a style="margin: 0 5px" class="btn btn-warning btn-sm"
+                       href="index.php?page=User-update&id=<?php echo $user['Usr_id'] ?>">Update</td>
         </tr>
     <?php endforeach; ?>
 

@@ -22,7 +22,7 @@
                     <label for="Driver_id" class="form-label">Driver_id</label>
                     <select class="form-select" id="state" name="Driver_id" required="">
                         <?php foreach ($getIds as $key => $getId): ?>
-                            <option value="<?php echo $getId['Driver_id'] ?>"><?php echo $getId['Driver_id'] ?></option>
+                            <option value="<?php echo $getId['Driver_id'] ?>"><?php echo $getId['Driver_id'] ?>.<?php echo $getId['F_name'] ?><?php echo $getId['L_name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="invalid-feedback">
@@ -33,7 +33,7 @@
                     <label for="Usr_id" class="form-label">User</label>
                     <select class="form-select" id="state" name="Usr_id" required="">
                         <?php foreach ($getIds as $key => $getId): ?>
-                            <option value="<?php echo $getId['Usr_id'] ?>"><?php echo $getId['Usr_id'] ?></option>
+                            <option value="<?php echo $getId['Usr_id'] ?>"><?php echo $getId['Usr_id'] ?>.<?php echo $getId['F_name'] ?><?php echo $getId['L_name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="invalid-feedback">

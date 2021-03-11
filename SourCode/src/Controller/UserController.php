@@ -13,11 +13,25 @@ class UserController
         $this->userModel = new userModel();
     }
 
+//    public function index()
+//    {
+//        // Lấy tất hoá đơn từ DB ra.
+//        $users = $this->userModel->getAll();
+//        include "src/View/User/User-list.php";
+//    }
     public function index()
     {
-        // Lấy tất hoá đơn từ DB ra.
-        $users = $this->userModel->getAll();
-        include "src/View/User/User-list.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            // Lấy tất hoá đơn từ DB ra.
+            $users = $this->userModel->getAll();
+            include "src/View/User/User-list.php";
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $search = $_POST['search'];
+            $users = $this->userModel->searchUser($search);
+//            var_dump($taxis);die();
+
+            include "src/View/User/User-list.php";
+        }
     }
 
     public function create()
@@ -68,4 +82,5 @@ class UserController
 
         }
     }
+
 }

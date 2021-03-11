@@ -40,31 +40,38 @@ $billController = new BillController();
     <div class="menu sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.php">Home</a>
+<!--                <a class="navbar-brand" href="index.php">Home</a>-->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php?page=Driver-list">Danh sach Driver</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php?page=Taxi-list">Danh sach Taxi</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php?page=User-list">Danh sach User</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="index.php?page=Trip-list">Danh sach Trip</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="btn btn-danger btn-lg" aria-current="page" href="logout.php">Log Out</a>
+                        </li>
                     </ul>
-<!--                    <form class="d-flex" action="index.php" method="post">-->
-<!--                        <input class="form-control me-2" type="search" placeholder="ten sach hoac ten tac gia" aria-label="Search" name="search_name">-->
-<!--                        <button class="btn btn-outline-success text-light" type="submit">Search</button>-->
-<!--                    </form>-->
+                    <form class="d-flex"  method="post">
+                        <input class="form-control me-2" type="search" placeholder="Search your F_name or License" aria-label="Search" name="search">
+                        <button class="btn btn-outline-success text-light" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
@@ -114,7 +121,8 @@ switch ($page) {
         break;
     case 'User-update':
         $userController->edit();
-    //Trip
+        break;
+        //Trip
     case 'Trip-list':
         $tripController->index();
         break;
@@ -144,3 +152,11 @@ ob_end_flush();
 ?>
 </body>
 </html>
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("location:login.html");
+//} else {
+//    echo "wellcome " . $_SESSION['user'];
+}
+?>

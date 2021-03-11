@@ -1,6 +1,5 @@
 <table class="table table-striped table-hover" style="text-align: center">
     <tr>
-<!--        <button class="btn btn-secondary btn-lg" ><a href="index.php?page=User-add">Add</a></button>-->
         <th>STT</th>
         <th>Trip_date</th>
         <th>Description</th>

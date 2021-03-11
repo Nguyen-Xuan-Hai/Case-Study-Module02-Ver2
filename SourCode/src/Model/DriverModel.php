@@ -79,4 +79,10 @@ class DriverModel
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function searchDriver($search){
+        $sql ="SELECT * FROM DRIVER WHERE F_name LIKE '%$search%' OR Conatct_no LIKE '%$search%'";
+        $stml = $this->database->query($sql);
+        return $stml->fetchAll();
+    }
 }

@@ -79,4 +79,9 @@ class UserModel
         return $stmt->fetchAll();
 
     }
+    public function searchUser($search){
+        $sql ="SELECT * FROM USER_TBL WHERE F_name LIKE '%$search%' OR Contat_no LIKE '%$search%'";
+        $stml = $this->database->query($sql);
+        return $stml->fetchAll();
+    }
 }

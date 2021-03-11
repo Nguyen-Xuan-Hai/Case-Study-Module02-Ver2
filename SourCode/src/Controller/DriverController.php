@@ -14,12 +14,26 @@ class DriverController
         $this->driverModel = new driverModel();
     }
 
+//    public function index()
+//    {
+//        // Lấy tất hoá đơn từ DB ra.
+//        $drivers = $this->driverModel->getAll();
+//        //var_dump($drivers);
+//        include "src/View/Driver/Driver-list.php";
+//    }
     public function index()
     {
-        // Lấy tất hoá đơn từ DB ra.
-        $drivers = $this->driverModel->getAll();
-        //var_dump($drivers);
-        include "src/View/Driver/Driver-list.php";
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            // Lấy tất hoá đơn từ DB ra.
+            $drivers = $this->driverModel->getAll();
+            include "src/View/Driver/Driver-list.php";
+        }elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $search = $_POST['search'];
+            $drivers = $this->driverModel->searchDriver($search);
+//            var_dump($taxis);die();
+
+            include "src/View/Driver/Driver-list.php";
+        }
     }
 
     public function create()

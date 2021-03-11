@@ -93,6 +93,11 @@ class TaxiModel
         return $stmt->fetchAll();
     }
 
+    public function searchTaxi($search){
+        $sql ="SELECT * FROM v_taxi WHERE F_name LIKE '%$search%' OR License_plates LIKE '%$search%'";
+        $stml = $this->database->query($sql);
+        return $stml->fetchAll();
+    }
 
 
 }
