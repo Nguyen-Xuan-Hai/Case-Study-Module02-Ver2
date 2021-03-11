@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover" style="text-align: center">
     <tr>
         <th>STT</th>
         <th>Bill_date</th>

@@ -1,6 +1,6 @@
 <div class="row g-3">
     <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Driver address</h4>
+        <h4 class="mb-3">Bill</h4>
         <form class="needs-validation" novalidate="" method="post">
             <div class="row g-3">
                 <div class="col-sm-6">
@@ -32,18 +32,18 @@
                         Zip code required.
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="Usr_id" class="form-label">Usr_id</label>
                     <select class="form-select" id="Usr_id" name="Usr_id" required="">
                         <?php foreach ($users as $key => $user): ?>
-                            <option value="<?php echo $user['Usr_id'] ?>"><?php echo $user['Usr_id'] ?></option>
+                            <option value="<?php echo $user['Usr_id'] ?>"><?php echo $user['Usr_id'] ?>.<?php echo $user['F_name'] ?><?php echo $user['L_name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="invalid-feedback">
                         Please provide a valid state.
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="Trip_id" class="form-label">Trip_id</label>
                     <select class="form-select" id="Trip_id" name="Trip_id" required="">
                         <?php foreach ($trips as $key => $trip): ?>

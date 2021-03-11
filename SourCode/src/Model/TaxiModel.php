@@ -16,7 +16,7 @@ class TaxiModel
 
     public function getAll()
     {
-        $sql = "SELECT * FROM TAXI ";
+        $sql = "SELECT * FROM TAXI JOIN DRIVER ON TAXI.Driver_id = DRIVER.Driver_id";
         $stmt = $this->database->query($sql);
         return $stmt->fetchAll();
     }

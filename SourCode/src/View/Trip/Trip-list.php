@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover" style="text-align: center">
     <tr>
 <!--        <button class="btn btn-secondary btn-lg" ><a href="index.php?page=User-add">Add</a></button>-->
         <th>STT</th>
@@ -13,6 +13,7 @@
         <th>Location_end</th>
         <th>Customer_number</th>
         <th>Status</th>
+        <th></th>
     </tr>
 
 
@@ -42,8 +43,8 @@
             <td><?php echo $trip['Location_end'] ?></td>
             <td><?php echo $trip['Customer_number'] ?></td>
             <td><?php echo $trip['Status'] ?></td>
-            <td><a href="index.php?page=Trip-delete&id=<?php echo $trip['Trip_id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete|
-                    <a href="index.php?page=Trip-update&id=<?php echo $trip['Trip_id'] ?>">Update</td>
+            <td><a style="margin: 0 5px" class="btn btn-danger btn-sm" href="index.php?page=Trip-delete&id=<?php echo $trip['Trip_id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete
+                    <a style="margin: 0 5px" class="btn btn-warning btn-sm" href="index.php?page=Trip-update&id=<?php echo $trip['Trip_id'] ?>">Update</td>
             <!--            <td><a href="index.php?page=User-update&id=--><?php //echo $user['Usr_id'] ?><!--">Update</td>-->
         </tr>
     <?php endforeach; ?>
