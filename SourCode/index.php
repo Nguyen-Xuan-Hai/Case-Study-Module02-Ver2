@@ -5,12 +5,14 @@ use App\Controller\TaxiController;
 use App\Controller\DriverController;
 use App\Controller\UserController;
 use App\Controller\TripController;
+use App\Controller\BillController;
 require __DIR__ . '/vendor/autoload.php';
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : '';
 $taxiController = new TaxiController();
 $driverController = new DriverController();
 $userController = new UserController();
 $tripController = new TripController();
+$billController = new BillController();
 ?>
 
 <html lang="en">
@@ -122,8 +124,21 @@ switch ($page) {
     case 'Trip-delete':
         $tripController->delete();
         break;
-//    case 'User-update':
-//        $userController->edit();
+    case 'Trip-update':
+        $tripController->edit();
+        break;
+        //Bill
+    case 'Bill-list':
+        $Usr_id = $_REQUEST['id'];
+        $billController->show($Usr_id);
+        break;
+    case 'Bill-add':
+        $billController->create();
+        break;
+    case 'Bill-details':
+        $Usr_id = $_REQUEST['id'];
+        $billController->showDetails($Usr_id);
+        break;
 }
 ob_end_flush();
 ?>

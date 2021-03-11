@@ -68,7 +68,7 @@ class TripModel
         return $stmt->fetchAll();
     }
 
-    public function editTaxi($Trip_id,$Trip_date,$Description,$Driver_id,$Usr_id,$Taxi_id,$Strt_time,$End_time,$Location_start,$Location_end,$Customer_number,$Status)
+    public function editTrip($Trip_id,$Trip_date,$Description,$Driver_id,$Usr_id,$Taxi_id,$Strt_time,$End_time,$Location_start,$Location_end,$Customer_number,$Status)
     {
 //        var_dump($Taxi_id,$License_plates,$Model,$Year,$Type,$Color,$Status,$Driver_id,$Image);
         $sql = "UPDATE TRIP_DETAILS SET Trip_date=:Trip_date,Description=:Description,Driver_id=:Driver_id,Usr_id=:Usr_id,Taxi_id=:Taxi_id,Strt_time=:Strt_time,End_time=:End_time,Location_start=:Location_start,Location_end=:Location_end,Customer_number=:Customer_number,Status=:Status WHERE Trip_id=:Trip_id";

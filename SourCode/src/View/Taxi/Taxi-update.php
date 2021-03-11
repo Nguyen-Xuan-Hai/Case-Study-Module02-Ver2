@@ -68,7 +68,7 @@
                     <select class="form-select" id="Driver_id" name="Driver_id" required="">
                         <option value="<?php echo $taxi[0]['Driver_id'] ?>"><?php echo $taxi[0]['Driver_id'] ?></option>
                         <?php foreach ($getIds as $key => $getId): ?>
-                            <option value="<?php echo $getId['Driver_id'] ?>"><?php echo $getId['F_name'] ?><?php echo $getId['L_name'] ?></option>
+                            <option value="<?php echo $getId['Driver_id'] ?>"><?php echo $getId['Driver_id'] ?>.<?php echo $getId['F_name'] ?><?php echo $getId['L_name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="invalid-feedback">

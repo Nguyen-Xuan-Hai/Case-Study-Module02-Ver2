@@ -4,9 +4,9 @@
         <th>STT</th>
         <th>Trip_date</th>
         <th>Description</th>
-        <th>Driver_id</th>
-        <th>Usr_id</th>
-        <th>Taxi_id</th>
+        <th>Driver</th>
+        <th>User</th>
+        <th>Taxi</th>
         <th>Strt_time</th>
         <th>End_time</th>
         <th>Location_start</th>
@@ -21,9 +21,21 @@
             <td><?php echo ++$key ?></td>
             <td><?php echo $trip['Trip_date'] ?></td>
             <td><?php echo $trip['Description'] ?></td>
-            <td><?php echo $trip['Driver_id'] ?></td>
-            <td><?php echo $trip['Usr_id'] ?></td>
-            <td><?php echo $trip['Taxi_id'] ?></td>
+            <td>
+                <a href="index.php?page=Bill-add">
+                    <?php echo "CD-".$trip['Driver_id'] ?>
+                </a>
+            </td>
+            <td>
+                <a href="index.php?page=Bill-details&id=<?php echo $trip['Usr_id'] ?>">
+                    <?php echo "CD-".$trip['Usr_id'] ?>
+                </a>
+            </td>
+            <td>
+                <a href="index.php?page=Bill-list&id=<?php echo $trip['Taxi_id'] ?>">
+                    <?php echo "CD-".$trip['Taxi_id'] ?>
+                </a>
+            </td>
             <td><?php echo $trip['Strt_time'] ?></td>
             <td><?php echo $trip['End_time'] ?></td>
             <td><?php echo $trip['Location_start'] ?></td>

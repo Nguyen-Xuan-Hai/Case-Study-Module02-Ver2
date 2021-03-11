@@ -65,7 +65,7 @@ class TripController
             $getIds = $this->tripModel->getDetails();
             $trip = $this->tripModel->findById($Trip_id);
 //            $this->billModel->getBillId($Trip_id);
-            include "src/View/Taxi/Trip-update.php";
+            include "src/View/Trip/Trip-update.php";
         } else {
             $Trip_id = $_POST['Trip_id'];
             $Trip_date = $_POST['Trip_date'];
@@ -79,9 +79,9 @@ class TripController
             $Location_end = $_POST['Location_end'];
             $Customer_number = $_POST['Customer_number'];
             $Status = $_POST['Status'];
-
+//            var_dump($Trip_id,$Trip_date,$Description,$Driver_id,$Usr_id,$Taxi_id,$Strt_time,$End_time,$Location_start,$Location_end,$Customer_number,$Status);die();
 //            var_dump($License_plates, $Model, $Year, $Type, $Color, $Status, $Driver_id, $Image);die();
-            $this->tripModel->editTaxi($Trip_id,$Trip_date,$Description,$Driver_id,$Usr_id,$Taxi_id,$Strt_time,$End_time,$Location_start,$Location_end,$Customer_number,$Status);
+            $this->tripModel->editTrip($Trip_id,$Trip_date,$Description,$Driver_id,$Usr_id,$Taxi_id,$Strt_time,$End_time,$Location_start,$Location_end,$Customer_number,$Status);
             header("location:index.php?page=Trip-list");
 
         }

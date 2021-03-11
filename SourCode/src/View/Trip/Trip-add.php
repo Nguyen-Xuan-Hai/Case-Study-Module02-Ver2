@@ -89,6 +89,7 @@
                 <div class="col-md-3">
                     <label for="Status" class="form-label">Status</label>
                     <select class="form-select" id="Status" name="Status" required="">
+                        <option>In Process</option>
                         <option>Resolved</option>
                         <option>Cancelled</option>
                     </select>

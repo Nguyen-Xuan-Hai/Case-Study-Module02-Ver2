@@ -8,7 +8,7 @@
         <th>Type</th>
         <th>Color</th>
         <th>Status</th>
-        <th>Driver_id</th>
+        <th>Driver</th>
         <th>Img</th>
     </tr>
 
